@@ -1,0 +1,21 @@
+﻿Сборка начата 28.11.2017 12:14:08.
+     1>Проект "C:\Users\User\Desktop\Calculator\Calculator\Calculator.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt calculator.cpp lab3.cpp
+         lab3.cpp
+         calculator.cpp
+     1>c:\users\user\desktop\calculator\calculator\calculator.cpp(7): warning C4018: <: несоответствие типов со знаком и без знака
+     1>c:\users\user\desktop\calculator\calculator\calculator.cpp(39): warning C4018: <: несоответствие типов со знаком и без знака
+     1>c:\users\user\desktop\calculator\calculator\calculator.cpp(68): warning C4018: <: несоответствие типов со знаком и без знака
+         Создание кода...
+     1>c:\users\user\desktop\calculator\calculator\calculator.cpp(20): warning C4715: TCalculator::check: значение возвращается не при всех путях выполнения
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\User\Desktop\Calculator\Debug\Calculator.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\User\Desktop\Calculator\Debug\Calculator.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\User\Desktop\Calculator\Debug\Calculator.lib" /MACHINE:X86 /SAFESEH Debug\calculator.obj
+         Debug\lab3.obj
+     1>calculator.obj : warning LNK4075: не учитывается "/EDITANDCONTINUE" из-за спецификации "/SAFESEH"
+         Calculator.vcxproj -> C:\Users\User\Desktop\Calculator\Debug\Calculator.exe
+     1>Сборка проекта "C:\Users\User\Desktop\Calculator\Calculator\Calculator.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+
+Затраченное время: 00:00:04.01
