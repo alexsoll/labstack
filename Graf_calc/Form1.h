@@ -46,6 +46,7 @@ namespace Graf_calc {
 	protected: 
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::TextBox^  textBox1;
+	private: System::Windows::Forms::Label^  label2;
 
 	private:
 		/// <summary>
@@ -63,12 +64,13 @@ namespace Graf_calc {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(56, 201);
+			this->label1->Location = System::Drawing::Point(165, 49);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(35, 13);
 			this->label1->TabIndex = 0;
@@ -76,11 +78,11 @@ namespace Graf_calc {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(146, 107);
+			this->button1->Location = System::Drawing::Point(96, 72);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 1;
-			this->button1->Text = L"button1";
+			this->button1->Text = L"Посчитать";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
 			// 
@@ -91,11 +93,21 @@ namespace Graf_calc {
 			this->textBox1->Size = System::Drawing::Size(100, 20);
 			this->textBox1->TabIndex = 2;
 			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(146, 49);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(13, 13);
+			this->label2->TabIndex = 3;
+			this->label2->Text = L"=";
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(284, 262);
+			this->Controls->Add(this->label2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
