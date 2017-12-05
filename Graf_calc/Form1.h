@@ -120,13 +120,18 @@ namespace Graf_calc {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	    std::string infix;
-		infix = msclr::interop::marshal_as<std::string>(textBox1->Text);
-		TCalculator res(infix);
-		res.topostfix();
-		label1->Text = Convert::ToString(res.calculate());
+	    std::string _infix;
+		_infix = msclr::interop::marshal_as<std::string>(textBox1->Text);
+		TCalculator C(_infix);
+		try {
+			double res = C.calculate();
+			label1->Text = Convert::ToString(res);
+		}
+		catch (int) {
+			label1->Text = "Error";
+		}
 		
-			 }
+			 }	
 	private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
 				 label1->Text="";
 			 }

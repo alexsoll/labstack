@@ -12,11 +12,11 @@ bool TCalculator::check() {
 				return false;
 			STC.pop();
 		}
-		if (!STC.isempty())
-			return false;
-		else 
-			return true;
 	}
+	if (!STC.isempty())
+		return false;
+	else
+		return true;
 }
 
 int TCalculator::priority(char el) {
@@ -34,6 +34,7 @@ int TCalculator::priority(char el) {
 
 void TCalculator::topostfix() {
 	if (check()) {
+		postfix = "";
 		STC.clear();
 		string buf = '(' + infix + ')';
 		for (int i = 0; i < buf.size(); i++) {
@@ -52,7 +53,7 @@ void TCalculator::topostfix() {
 				}
 			}
 			if (buf[i] == '+' || buf[i] == '-' || buf[i] == '*' || buf[i] == '/' || buf[i] == '^') {
-				postfix += ' ';
+				postfix += " ";
 				while (priority(buf[i]) <= priority(STC.top()))
 					postfix += STC.pop();
 				STC.push(buf[i]);
@@ -64,6 +65,7 @@ void TCalculator::topostfix() {
 }
 
 double TCalculator::calculate() {
+	topostfix();
 	STD.clear();
 	for (int i = 0; i < postfix.size(); i++) {
 		if (postfix[i] == '+' || postfix[i] == '-' || postfix[i] == '*' || postfix[i] == '/' || postfix[i] == '^') {
