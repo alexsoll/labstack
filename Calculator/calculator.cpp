@@ -28,6 +28,8 @@ int TCalculator::priority(char el) {
 	case '*': return 2;
 	case '/': return 2;
 	case '^': return 3;
+	case 's': return 4;
+	case 'c': return 4;
 	default: return -1;
 	}
 }
@@ -58,6 +60,12 @@ void TCalculator::topostfix() {
 					postfix += STC.pop();
 				STC.push(buf[i]);
 			}
+			if ((buf[i] == 's' && buf[i+1] == 'i' && buf[i+2] == 'n') || (buf[i] == 'c' && buf[i+1] == 'o' && buf[i+2] == 's')) {
+				postfix += "0 ";
+			while (priority(buf[i]) <= priority(STC.top()))
+					postfix += STC.pop();
+				STC.push(buf[i]);
+				}
 		}
 	}
 	else
@@ -68,7 +76,7 @@ double TCalculator::calculate() {
 	topostfix();
 	STD.clear();
 	for (int i = 0; i < postfix.size(); i++) {
-		if (postfix[i] == '+' || postfix[i] == '-' || postfix[i] == '*' || postfix[i] == '/' || postfix[i] == '^') {
+		if (postfix[i] == '+' || postfix[i] == '-' || postfix[i] == '*' || postfix[i] == '/' || postfix[i] == '^' || postfix[i] == 'c' || postfix[i] == 's') {
 			double op1,op2,res;
 			op2 = STD.pop();
 			op1 = STD.pop();
@@ -88,6 +96,12 @@ double TCalculator::calculate() {
 					break;
 				case '^':
 					res = pow(op1,op2);
+					break;
+				case 's':
+					res = op1 + sin(op2);
+					break;
+				case 'c':
+					res = op1 + cos(op2);
 					break;
 			}
 			STD.push(res);

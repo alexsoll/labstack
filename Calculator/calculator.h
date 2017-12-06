@@ -2,6 +2,7 @@
 #include "stack.h"
 #include <string>
 #include <math.h>
+#define _USE_MATH_DEFINES
 using namespace std;
 
 class TCalculator {
